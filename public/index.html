@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -20,6 +20,8 @@
     .in{font-weight: 400 !important; font-style: normal !important;
     }
     body{
+      background: url(/images/henryhighbury.png) no-repeat center fixed;
+      background-size: cover;
       /*background-color: #DECADE
       background-color: #F2F6D0 */
     }
@@ -31,13 +33,13 @@
     #articles{
       width:60%;
       height:700px;
-      display:inline-block;
-      overflow: auto;
+/*      display:inline-block;
+      overflow: auto;*/
     }
-    #messages{
+/*    #messages{
       width:30%;
       float:right;
-    }
+    }*/
     textarea, input{
       display:block;
       width:100%;
@@ -54,15 +56,25 @@
   </style>
 </head>
 <body>
+  <header>
+    <nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper">
+          <p class="page-title">Scrape.Scroll.Tag...</p>
+            <p>..your way through the latest sports headlines</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <div id="wrapper">
-    <h1>Scraper</h1>
-    <h2><i>If you can do this...the homework should be no problem.</i></h2>
-    <div id="articles"></div>
+    <div id="articles" class="row col s6 offset-s3"></div>
     <div id="messages"></div>
   </div>
+
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script src="app.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
