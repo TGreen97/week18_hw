@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded ({
 app.use(express.static('public'));
 
 // Database configuration with Mongoose
-mongoose.connect('mongodb://localhost/week18hw');
+mongoose.connect('mongodb://localhost/week18scrapeTag');
 var db = mongoose.connection;
 
 // Display Mongoose Errors
@@ -44,11 +44,11 @@ app.get('/', function(req, res) {
 // GET to Scrape the echojs website
 app.get('/scrape', function(req, res) {
 // Use a request to grab the body of the HTML
-  request('http://www.echojs.com/', function(error, response, html) {
+  request('https://www.reddit.com/r/sports/', function(error, response, html) {
 // Take body of HTML and load into Cheerio and save it to $ as a Selector
     var $ = cheerio.load(html);
 // Grab every h2 within the article Tag and perform the function
-    $('article h2').each(function(i, element) {
+    $('p.title').each(function(i, element) {
 // Save an Empty Result Object
       var result = {};
 // Add & Save Text & HREF of every link to Result Object
